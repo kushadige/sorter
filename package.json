@@ -1,0 +1,21 @@
+{
+  "name": "sorter",
+  "version": "0.0.1",
+  "description": "solid",
+  "scripts": {
+    "start:build": "tsc -w",
+    "start:run": "nodemon build/index.js",
+    "start": "concurrently npm:start:*"
+  },
+  "keywords": [
+    "solid",
+    "sorter",
+    "bubble sort"
+  ],
+  "author": "kushadige",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "nodemon": "^3.0.1"
+  }
+}
