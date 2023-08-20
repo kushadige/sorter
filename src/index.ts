@@ -1,14 +1,14 @@
+import { LinkedList } from "./models/LinkedList";
 import { Sorter } from "./models/Sorter";
-import { CharactersCollection } from "./models/CharactersCollection";
-import { NumbersCollection } from "./models/NumbersCollection";
 
-const numbersCollection = new NumbersCollection([24, 52, -5, -123, 0]);
-const charactersCollection = new CharactersCollection("oguzhan");
+const list = new LinkedList();
 
-const sorter1 = new Sorter(numbersCollection);
-sorter1.bubble();
-console.log(sorter1.collection);
+list.insert(500);
+list.insert(-10);
+list.insert(-3);
+list.insert(4);
+list.print();
 
-const sorter2 = new Sorter(charactersCollection);
-sorter1.bubble();
-console.log(sorter2.collection);
+const sorter = new Sorter(list);
+sorter.bubble();
+list.print();
