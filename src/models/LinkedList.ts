@@ -1,10 +1,12 @@
+import { Sorter } from "./Sorter";
+
 class Node {
   next: Node | null = null;
   constructor(public data: number) {}
 }
 
-export class LinkedList {
-  head: Node | null = null;
+export class LinkedList extends Sorter {
+  private head: Node | null = null;
 
   get length(): number {
     if (!this.head) {
@@ -19,14 +21,14 @@ export class LinkedList {
     return length;
   }
 
-  compare(leftIdx: number, rightIdx: number): boolean {
+  protected compare(leftIdx: number, rightIdx: number): boolean {
     if (!this.head) {
       throw new Error("Empty list");
     }
     return this.at(leftIdx).data > this.at(rightIdx).data;
   }
 
-  swap(leftIdx: number, rightIdx: number): void {
+  protected swap(leftIdx: number, rightIdx: number): void {
     const node1 = this.at(leftIdx);
     const node2 = this.at(rightIdx);
 
